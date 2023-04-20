@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    @user = User.find_by_email(user_params[:email])
+    @user = User.find_by_email(search_params[:email])
     if @user
       render json: @user
     else
@@ -56,5 +56,9 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:name, :email)
+    end
+
+    def search_params
+      params.permit(:email)
     end
 end
