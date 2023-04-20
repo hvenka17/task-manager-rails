@@ -15,5 +15,6 @@ Task.create(
   description: "GPS is not working for Jarvis",
   priority: :high,
   status: :inProgress,
+  due_date: Date.new(2023,04,20),
   user: User.find_by_name("Tony Stark")
 )
