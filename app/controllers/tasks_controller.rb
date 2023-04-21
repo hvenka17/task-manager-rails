@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    @tasks = Task.all
+    @tasks = @user.tasks
 
     render json: @tasks
   end
